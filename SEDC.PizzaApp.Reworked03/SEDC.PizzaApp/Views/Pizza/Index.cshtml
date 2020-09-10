@@ -1,0 +1,13 @@
+﻿@model List<SEDC.PizzaApp.Models.ViewModels.PizzaViewModel>
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>Index</h2>
+<p>Pizzas</p>
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    <p>Name: @Model[i].Name</p>
+    <p><a asp-controller="Pizza" asp-action="Details" asp-route-id="@Model[i].Id">See Details</a></p>
+    <hr />
+}
