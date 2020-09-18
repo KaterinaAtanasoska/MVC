@@ -1,0 +1,21 @@
+﻿@model List<PizzaViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<p>Pizzas</p>
+
+<span>@ViewData["SharedMessage"]</span>
+
+<a asp-controller="Pizza" asp-action="CreatePizza"> Create Pizza </a>
+
+@foreach (var pizza in Model)
+{
+    <ul>
+        <li>Pizza Name: @pizza.PizzaName</li>
+        <li>Price: @pizza.Price</li>
+        <li><a asp-controller="Pizza" asp-action="EditPizza" asp-route-id="@pizza.Id">Edit Pizza</a></li>
+        <li><a asp-controller="Pizza" asp-action="DeletePizza" asp-route-id="@pizza.Id">Delete Pizza</a></li>
+    </ul>
+}

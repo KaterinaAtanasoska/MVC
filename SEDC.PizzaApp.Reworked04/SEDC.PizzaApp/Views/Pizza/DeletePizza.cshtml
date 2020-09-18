@@ -1,0 +1,14 @@
+﻿@model PizzaViewModel
+
+<h1>Delete Pizza</h1>
+
+<h3>Are you sure that you want to delete the following pizza:</h3>
+<p>Pizza Name: @Model.PizzaName</p>
+
+
+@*<a asp-action="ConfirmDelete" asp-route-id="@Model.Id">Confirm Delete</a>*@
+
+<form asp-action="DeletePizzaPost">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Confirm Delete</button>
+</form>
