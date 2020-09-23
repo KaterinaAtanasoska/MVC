@@ -32,7 +32,7 @@ namespace SEDC.PizzaApp.Models.Mappers
         public static Order ToOrder(OrderViewModel orderViewModel)
         {
             //find the Pizza domain model with that pizza name
-            Pizza pizza = StaticDb.Pizzas.FirstOrDefault(x => x.Name == orderViewModel.PizzaName);
+            Pizza pizza = StaticDb.Pizzas.FirstOrDefault(x => x.Id.ToString() == orderViewModel.PizzaName);
             //find the user with the right user id
             User user = StaticDb.Users.FirstOrDefault(x => x.Id == orderViewModel.UserId);
 

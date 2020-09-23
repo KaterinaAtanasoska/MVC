@@ -77,8 +77,8 @@ namespace SEDC.PizzaApp.Controllers
         {
             //increment the id in the database
             orderViewModel.Id = ++StaticDb.OrderId;
-            //validation for pizza, we have to validate if the pizza name is of an existing pizza
-            Pizza pizza = StaticDb.Pizzas.FirstOrDefault(x => x.Name.Equals(orderViewModel.PizzaName));
+            //validation for pizza, we have to validate if the pizza name is of an existing pizza            
+            Pizza pizza = StaticDb.Pizzas.FirstOrDefault(x => x.Id.ToString() == orderViewModel.PizzaName);
             //validation for user - to do
             if (pizza == null)
              return View("BadRequest");
@@ -124,7 +124,7 @@ namespace SEDC.PizzaApp.Controllers
             if (order == null)
                 return View("ResourceNotFound");
 
-            Pizza pizza = StaticDb.Pizzas.FirstOrDefault(x => x.Name.Equals(orderViewModel.PizzaName));
+            Pizza pizza = StaticDb.Pizzas.FirstOrDefault(x => x.Id == orderViewModel.Id);
             //validation for user - to do
             if (pizza == null)
             return View("BadRequest");

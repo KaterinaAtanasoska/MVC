@@ -27,14 +27,14 @@ namespace SEDC.PizzaApp.Models.Mappers
                 Address = user.Address
             };
         }
-        public static User ToUser(User user)
+        public static User ToUser(UserViewModel userViewModel)
         {
             return new User
             {
-                Id = user.Id,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Address = user.Address
+                Id = userViewModel.Id,
+                FirstName = userViewModel.FirstName,
+                LastName = userViewModel.LastName,
+                Address = userViewModel.Address
             };
         }
     }
