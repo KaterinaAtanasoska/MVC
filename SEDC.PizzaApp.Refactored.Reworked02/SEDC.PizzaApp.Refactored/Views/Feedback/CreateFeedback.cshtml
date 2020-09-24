@@ -1,0 +1,27 @@
+﻿@model FeedbackViewModel
+
+<h1>Create Feedback</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateFeedbackPost" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-default">Create</button>
+            <div>
+                <a asp-action="Index" asp-controller="Feedback">Back</a>
+            </div>
+        </form>
+    </div>
+
+</div>
