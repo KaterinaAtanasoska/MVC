@@ -45,8 +45,9 @@ namespace SEDC.PizzaApp.DataAccess
                 .WithOne(x => x.User)
                 .HasForeignKey(x => x.UserId);
 
-    
 
+            modelBuilder.Entity<Feedback>();
+            //.HasKey(x => x.Id);
 
             //seeding (only real columns in DB)
             modelBuilder.Entity<Pizza>()
